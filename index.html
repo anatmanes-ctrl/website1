@@ -3,156 +3,230 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dr. Anat Tchetchik – Environmental Economics</title>
+  <title>Prof. Anat Tchetchik – Environmental Economics</title>
   <meta name="description" content="Environmental economics, consumer preferences, regulation and policy analysis" />
 
   <style>
     :root{
-      --bg:#0b0f14; --card:#111826; --text:#e6edf3; --muted:#9fb0c0;
-      --accent:#7dd3fc; --border:rgba(255,255,255,.10);
-      --max:1100px; --radius:18px;
+      --bg:#0b0f14;
+      --card:#111826;
+      --text:#e6edf3;
+      --muted:#9fb0c0;
+      --accent:#7dd3fc;
+      --border:rgba(255,255,255,.10);
+      --max:1100px;
+      --radius:18px;
     }
     *{box-sizing:border-box}
     body{
       margin:0;
       font-family: system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 80% -10%, rgba(125,211,252,.25), transparent 60%),
-                  radial-gradient(900px 500px at 10% 10%, rgba(167,139,250,.18), transparent 55%),
-                  var(--bg);
-      color:var(--text); line-height:1.6;
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(125,211,252,.25), transparent 60%),
+        radial-gradient(900px 500px at 10% 10%, rgba(167,139,250,.18), transparent 55%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.6;
     }
     a{color:var(--accent); text-decoration:none}
     a:hover{text-decoration:underline}
     .wrap{max-width:var(--max); margin:0 auto; padding:22px}
+
     header{
       position:sticky; top:0; z-index:10;
-      background:rgba(11,15,20,.78); backdrop-filter: blur(10px);
+      background:rgba(11,15,20,.78);
+      backdrop-filter: blur(10px);
       border-bottom:1px solid var(--border);
     }
-    .nav{display:flex; justify-content:space-between; flex-wrap:wrap; gap:14px}
-    .brand b{font-size:20px}
-    .brand span{color:var(--muted); font-size:14px}
-    .menu a{
-      margin-left:12px; padding:8px 10px; border-radius:12px;
-      border:1px solid transparent; color:var(--text)
+    .nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      flex-wrap:wrap;
+      gap:14px;
     }
-    .menu a:hover{border-color:var(--border); background:rgba(255,255,255,.04)}
-    .grid{display:grid; grid-template-columns: 1.2fr .8fr; gap:18px}
-    @media (max-width: 900px){ .grid{grid-template-columns:1fr} }
+    .brand b{font-size:20px}
+    .brand span{display:block; color:var(--muted); font-size:14px; margin-top:2px}
+    .menu a{
+      display:inline-block;
+      margin-left:10px;
+      padding:8px 10px;
+      border-radius:12px;
+      border:1px solid transparent;
+      color:var(--text);
+    }
+    .menu a:hover{
+      border-color:var(--border);
+      background:rgba(255,255,255,.04);
+      text-decoration:none;
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: 1.2fr .8fr;
+      gap:18px;
+      margin-top:18px;
+    }
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .menu a{margin-left:0; margin-right:10px}
+    }
+
     .card{
       background: linear-gradient(180deg, rgba(255,255,255,.04), transparent 40%), var(--card);
-      border:1px solid var(--border); border-radius:var(--radius);
+      border:1px solid var(--border);
+      border-radius:var(--radius);
       padding:18px;
       box-shadow: 0 10px 30px rgba(0,0,0,.25);
     }
-    h1{margin-top:0; font-size:34px}
-    h2{margin-bottom:10px}
+
+    h1{margin:0 0 10px; font-size:34px; letter-spacing:.2px}
+    h2{margin:0 0 10px; font-size:20px}
+    p{margin:8px 0}
+    section{scroll-margin-top:90px; margin-top:16px}
+
+    .chips{margin-top:10px}
     .chips span{
-      display:inline-block; margin:6px 6px 0 0; padding:6px 10px;
-      border:1px solid var(--border); border-radius:999px;
-      font-size:13px; color:var(--muted)
+      display:inline-block;
+      margin:6px 6px 0 0;
+      padding:6px 10px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      font-size:13px;
+      color:var(--muted);
+      background:rgba(255,255,255,.02);
     }
-    footer{color:var(--muted); font-size:13px; padding:20px 0}
+
+    .profile{
+      display:flex;
+      gap:14px;
+      align-items:center;
+      margin-bottom:10px;
+    }
+    .profile img{
+      width:88px;
+      height:88px;
+      object-fit:cover;
+      border-radius:50%;
+      border:1px solid var(--border);
+      background:rgba(255,255,255,.03);
+    }
+    .small{color:var(--muted); font-size:13px}
+
+    ul{margin:10px 0 0; padding-left:18px}
+    li{margin:6px 0}
+
+    footer{
+      color:var(--muted);
+      font-size:13px;
+      padding:20px 0 10px;
+      text-align:center;
+    }
   </style>
 </head>
 
-<body> body {
-    background-color: #0f172a;
-    color: #e5e7eb;
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-  }
-<header>
-  <div class="wrap nav">
-    <div class="brand">
-      <b>Dr. Anat Tchetchik</b><br>
-      <span>Environmental Economics · Policy & Regulation</span>
-    </div>
-    <nav class="menu">
-      <a href="#about">About</a>
-      <a href="#research">Research</a>
-      <a href="#publications">Publications</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
-
-<main class="wrap">
-  <section class="grid">
-    <div class="card">
-      <h1>Environmental economics grounded in real-world policy.</h1>
-      <p>
-        I am an Associate Professor of Environmental Economics at Bar-Ilan University.
-        My research focuses on consumer preferences, environmental regulation,
-        and the design of effective policy instruments.
-      </p>
-
-      <div class="chips">
-        <span>Stated Preferences / DCE</span>
-        <span>Environmental Policy</span>
-        <span>Behavioral Regulation</span>
-        <span>Public Goods Valuation</span>
+<body>
+  <header>
+    <div class="wrap nav">
+      <div class="brand">
+        <b>Prof. Anat Tchetchik</b>
+        <span>Environmental Economics · Policy & Regulation</span>
       </div>
+
+      <nav class="menu" aria-label="Site menu">
+        <a href="#about">About</a>
+        <a href="#research">Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-    <aside class="card">
-      <h2>Affiliation</h2>
+  <main class="wrap">
+    <section class="grid">
+      <div class="card">
+        <h1>Environmental economics grounded in real-world policy.</h1>
+        <p>
+          I am an Associate Professor of Environmental Economics at Bar-Ilan University.
+          My research focuses on consumer preferences, environmental regulation,
+          and the design of effective policy instruments.
+        </p>
+
+        <div class="chips" aria-label="Keywords">
+          <span>Stated Preferences / DCE</span>
+          <span>Environmental Policy</span>
+          <span>Behavioral Regulation</span>
+          <span>Public Goods Valuation</span>
+        </div>
+      </div>
+
+      <aside class="card">
+        <div class="profile">
+          <!-- Upload an image named profile.jpg to the repository (same folder as index.html) -->
+          <img src="profile.jpg" alt="Prof. Anat Tchetchik" />
+          <div>
+            <b>Affiliation</b>
+            <div class="small">Department of Geography and Environment<br/>Bar-Ilan University</div>
+          </div>
+        </div>
+
+        <p>
+          <b>Email:</b> <a href="mailto:Anat.Tchetchik@biu.ac.il">Anat.Tchetchik@biu.ac.il</a><br/>
+          <b>Tel:</b> +972-3-5317856
+        </p>
+
+        <p>
+          <a href="https://scholar.google.co.il/citations?user=gB5gF0IAAAAJ" target="_blank" rel="noreferrer">Google Scholar</a><br/>
+          <a href="https://www.researchgate.net/profile/Anat_Tchetchik" target="_blank" rel="noreferrer">ResearchGate</a>
+        </p>
+
+        <p class="small">
+          Office hours: by appointment.
+        </p>
+      </aside>
+    </section>
+
+    <section id="about" class="card">
+      <h2>About</h2>
       <p>
-        Department of Geography and Environment<br>
-        Bar-Ilan University
+        My work examines how individuals and communities respond to environmental policies,
+        with a particular emphasis on consumer behavior, soft regulation, and market-based instruments.
       </p>
+    </section>
+
+    <section id="research" class="card">
+      <h2>Research Interests</h2>
+      <ul>
+        <li>Consumer preferences for sustainable products and services</li>
+        <li>Environmental valuation and public goods</li>
+        <li>Policy design and regulatory instruments</li>
+        <li>Urban sustainability and circular economy</li>
+      </ul>
+    </section>
+
+    <section id="publications" class="card">
+      <h2>Selected Publications</h2>
       <p>
-        <a href="mailto:Anat.Tchetchik@biu.ac.il">Anat.Tchetchik@biu.ac.il</a><br>
-        Tel: +972-3-5317856
+        For a full and updated list of publications, please visit my
+        <a href="https://scholar.google.co.il/citations?user=gB5gF0IAAAAJ" target="_blank" rel="noreferrer">Google Scholar profile</a>.
       </p>
+    </section>
+
+    <section id="contact" class="card">
+      <h2>Contact</h2>
       <p>
-        <a href="https://scholar.google.co.il/citations?user=gB5gF0IAAAAJ" target="_blank">Google Scholar</a><br>
-        <a href="https://www.researchgate.net/profile/Anat_Tchetchik" target="_blank">ResearchGate</a>
+        Email: <a href="mailto:Anat.Tchetchik@biu.ac.il">Anat.Tchetchik@biu.ac.il</a><br/>
+        Bar-Ilan University, Ramat Gan, Israel
       </p>
-    </aside>
-  </section>
+    </section>
 
-  <section id="about" class="card">
-    <h2>About</h2>
-    <p>
-      My work examines how individuals and communities respond to environmental policies,
-      with a particular emphasis on consumer behavior, soft regulation, and market-based instruments.
-    </p>
-  </section>
+    <footer>
+      © <span id="y"></span> Prof. Anat Tchetchik
+    </footer>
+  </main>
 
-  <section id="research" class="card">
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Consumer preferences for sustainable products and services</li>
-      <li>Environmental valuation and public goods</li>
-      <li>Policy design and regulatory instruments</li>
-      <li>Urban sustainability and circular economy</li>
-    </ul>
-  </section>
-
-  <section id="publications" class="card">
-    <h2>Selected Publications</h2>
-    <p>
-      For a full and updated list of publications, please visit my
-      <a href="https://scholar.google.co.il/citations?user=gB5gF0IAAAAJ" target="_blank">Google Scholar profile</a>.
-    </p>
-  </section>
-
-  <section id="contact" class="card">
-    <h2>Contact</h2>
-    <p>
-      Email: <a href="mailto:Anat.Tchetchik@biu.ac.il">Anat.Tchetchik@biu.ac.il</a><br>
-      Office hours by appointment.
-    </p>
-  </section>
-
-  <footer>
-    © <span id="y"></span> Dr. Anat Tchetchik
-  </footer>
-</main>
-
-<script>
-  document.getElementById("y").textContent = new Date().getFullYear();
-</script>
+  <script>
+    document.getElementById("y").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
